@@ -59,6 +59,14 @@ So let's review. Cody performed his development activities on the Iterate cluste
 
 Now, let's apply the workload and explore the supply chain which drives the deployment process.
 
+First execute the cleanup command to delete an existing workload.
+
+```execute-1
+tanzu apps workload delete partnertapdemo --namespace default --yes
+```
+
+Run the deploy workload command
+
 ```execute-1 
 tanzu apps workload create partnertapdemo1 --git-repo https://tapgit.tap11.tanzupartnerdemo.com/tapgit/partnertapdemo \
 --type web \
@@ -67,3 +75,4 @@ tanzu apps workload create partnertapdemo1 --git-repo https://tapgit.tap11.tanzu
 --label apps.tanzu.vmware.com/has-tests=true \
 --git-branch master --namespace default --yes
 ```
+
