@@ -1,21 +1,26 @@
-export REGISTRY_HOST=tanzudemoreg.azurecr.io
-echo $REGISTRY_HOST
-export USERNAME1=`kubectl get secret registry-credentials -n default -o json | jq '.data' | cut -f2 -d":"|tr -d \" | awk 'NR>1 && NR < 3'`
+export USERNAME1=`kubectl get secret registry-credentials -n tap-install -o json | jq '.data' | cut -f2 -d":"|tr -d \" | awk 'NR>1 && NR < 3'`
 
 export REGISTRY_USERNAME=$(echo $USERNAME1 | base64 -d | jq '.auths[].username' | tr -d '"')
+
 echo $REGISTRY_USERNAME
-export PASSWORD1=`kubectl get secret registry-credentials -n default -o json | jq '.data' | cut -f2 -d":"|tr -d \" | awk 'NR>1 && NR < 3'`
+
+export PASSWORD1=`kubectl get secret registry-credentials -n tap-install -o json | jq '.data' | cut -f2 -d":"|tr -d \" | awk 'NR>1 && NR < 3'`
 
 export REGISTRY_PASSWORD=$(echo $PASSWORD1 | base64 -d | jq '.auths[].password' | tr -d '"')
+
+export REGISTRY_HOST=tanzupartnerworkshop.azurecr.io
+
+echo $REGISTRY_HOST
+
 # Login to Docker Registry
 docker login $REGISTRY_HOST -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
 
 # Rename eduk8s context to tap cluster name
 
-kubectl config rename-context eduk8s tap11-aks-fullcluster
+kubectl config rename-context eduk8s tap12-aks-fullcluster
 
 # Switch to default namespace
-kubectl config set-context --current --namespace default
+kubectl config set-context --current --namespace tap-install
 
 # Get GITea Creds to push changes
 export GIT_USERNAME1=`kubectl get secret gitea-secret -n default -o json | jq '.data.username' | tr -d '"'`
