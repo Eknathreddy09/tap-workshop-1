@@ -23,12 +23,12 @@ kubectl config rename-context eduk8s tap12-aks-fullcluster
 kubectl config set-context --current --namespace tap-install
 
 # Get GITea Creds to push changes
-export GIT_USERNAME1=`kubectl get secret gitea-secret -n default -o json | jq '.data.username' | tr -d '"'`
-export GIT_PASSWORD1=`kubectl get secret gitea-secret -n default -o json | jq '.data.password' | tr -d '"'`
+export GIT_USERNAME1=`kubectl get secret gitea-secret -n tap-install -o json | jq '.data.username' | tr -d '"'`
+export GIT_PASSWORD1=`kubectl get secret gitea-secret -n tap-install -o json | jq '.data.password' | tr -d '"'`
 export GIT_USERNAME=$(echo $GIT_USERNAME1 | base64 -d | tr -d '"')
 #echo $GIT_USERNAME
 export GIT_PASSWORD=$(echo $GIT_PASSWORD1 | base64 -d | tr -d '"')
-export GIT_HOST=tapgit.tap11.tanzupartnerdemo.com
+export GIT_HOST=tapgit.tap12.captainvirtualization.in
 # Setup GIT for change commit
 git config --global user.email ""
 git config --global user.name $GIT_USERNAME
