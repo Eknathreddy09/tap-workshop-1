@@ -2,6 +2,7 @@
 set -x
 set +e
 
+export SESSION_NAME={{ session_namespace }}
 
 cat <<'EOF' > /home/eduk8s/.local/share/code-server/User/settings.json
 {
