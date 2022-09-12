@@ -27,7 +27,7 @@ At the bottom, you will see a working URL like this once the deployment is ready
 ```
 Knative Services
 NAME                 READY   URL
-partnertapdemo   Ready   http://tanzu-java-web-app.tap-install.captainvirtualization.in
+partnertapdemo   Ready    http://partnertapdemo.tap-install.workshop.tap.captainvirtualization.in
 ```
 Click on the URL in the terminal window to view the application.
 
