@@ -62,17 +62,16 @@ Now, let's apply the workload and explore the supply chain which drives the depl
 First execute the cleanup command to delete an existing workload.
 
 ```execute-1
-tanzu apps workload delete partnertapdemo --namespace default --yes
+tanzu apps workload delete partnertapdemo --namespace tap-install --yes
 ```
 
 Run the deploy workload command
 
 ```execute-1 
-tanzu apps workload create partnertapdemo --git-repo https://tapgit.tap11.tanzupartnerdemo.com/tapgit/partnertapdemo \
+tanzu apps workload create partnertapdemo --git-repo https://gitea-tapdemo.captainvirtualization.in/tapdemo-user/partnertapdemo \
 --type web \
 --label app.kubernetes.io/part-of=partnertapdemo \
 --namespace default \
 --label apps.tanzu.vmware.com/has-tests=true \
 --git-branch master --namespace default --yes
 ```
-
