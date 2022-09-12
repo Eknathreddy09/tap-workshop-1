@@ -22,8 +22,6 @@ kubectl config rename-context eduk8s tap12-aks-fullcluster
 # Switch to default namespace
 kubectl config set-context --current --namespace tap-install
 
-export SESSION_NAME={{ session_namespace }}
-
 # Get GITea Creds to push changes
 export GIT_USERNAME1=`kubectl get secret gitea-secret -n tap-install -o json | jq '.data.username' | tr -d '"'`
 export GIT_PASSWORD1=`kubectl get secret gitea-secret -n tap-install -o json | jq '.data.password' | tr -d '"'`
