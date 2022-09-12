@@ -13,7 +13,10 @@ You'll see a lot more of Learning Center as we progress, but let's get comfortab
 
 Initialize terminal shell
 
+```execute-all
+export SESSION_NAME={{ session_namespace }}
+```
+
 ```execute
 source /opt/workshop/setup.d/01-terminal-init.sh
-
 ``` 
