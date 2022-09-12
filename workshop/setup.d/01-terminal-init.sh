@@ -30,7 +30,7 @@ export GIT_PASSWORD1=`kubectl get secret gitea-secret -n tap-install -o json | j
 export GIT_USERNAME=$(echo $GIT_USERNAME1 | base64 -d | tr -d '"')
 #echo $GIT_USERNAME
 export GIT_PASSWORD=$(echo $GIT_PASSWORD1 | base64 -d | tr -d '"')
-export GIT_HOST=tapgit.tap12.captainvirtualization.in
+export GIT_HOST=gitea-tapdemo.captainvirtualization.in
 # Setup GIT for change commit
 git config --global user.email ""
 git config --global user.name $GIT_USERNAME
