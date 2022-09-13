@@ -68,10 +68,10 @@ tanzu apps workload delete partnertapdemo --namespace tap-install --yes
 Run the deploy workload command
 
 ```execute-1 
-tanzu apps workload create partnertapdemo --git-repo http://gitea-tapdemo.captainvirtualization.in:3000/tapdemo-user/partnertapdemo \
+tanzu apps workload create partnertapdemo --git-repo https://gitea-tapdemo.captainvirtualization.in/tapdemo-user/partnertapdemo \
 --type web \
 --label app.kubernetes.io/part-of=partnertapdemo \
 --namespace default \
 --label apps.tanzu.vmware.com/has-tests=true \
---git-branch main --namespace tap-install --yes
+--git-branch master --namespace tap-install --yes
 ```
