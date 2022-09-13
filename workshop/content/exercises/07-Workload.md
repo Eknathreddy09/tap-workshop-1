@@ -75,3 +75,21 @@ tanzu apps workload create partnertapdemo --git-repo https://gitea-tapdemo.capta
 --label apps.tanzu.vmware.com/has-tests=true \
 --git-branch master --namespace tap-install --yes
 ```
+
+Run to list the deployed apps
+
+```execute-2
+tanzu apps workload list -n tap-install
+```
+
+Run to check the apps status
+
+```execute-2
+tanzu apps workload get partnertapdemo -n tap-install
+```
+
+Tail the app deploy logs
+
+```execute-2
+tanzu apps workload tail partnertapdemo --since 10m --timestamp -n tap-install
+```
