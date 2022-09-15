@@ -14,9 +14,11 @@ url: https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.2/tap/GUID-s
 
 The following are a few use cases supported by the CLI:
 
-  What packages and CVEs exist in a particular image? (image)
-  What packages and CVEs exist in my source code? (source)
-  What dependencies are affected by a specific CVE? (vulnerabilities)
+What packages and CVEs exist in a particular image? (image)
+ 
+What packages and CVEs exist in my source code? (source)
+
+What dependencies are affected by a specific CVE? (vulnerabilities)
   
 ###### Add an image report
   
